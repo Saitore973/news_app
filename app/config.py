@@ -3,6 +3,7 @@ class Config:
     General configuration parent class
     '''
     NEWS_SOURCE_URL='https://newsapi.org/v2/sources?category={}&apiKey={}'
+    ARTICLES_URL='https://newsapi.org/v2/everything?q={}&apiKey={}'
 
 
 

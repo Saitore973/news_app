@@ -52,3 +52,23 @@ def process_results(news_list):
             news_results.append(news_object)
 
     return news_results
+
+def get_news(id):
+    get_news_details_url = base_url.format(id,apiKey)
+
+    with urllib.request.urlopen(get_news_details_url) as url:
+        news_details_data = url.read()
+        news_details_response = json.loads(news_details_data)
+
+        news_object = None
+        if news_details_response:
+            id = news_details_response.get('id')
+            name = news_details_response.get('name')
+            description = news_details_response.get('description')
+            url = news_details_response.get('url')
+            category = news_details_response.get('category')
+            
+
+            news_object = News(id,name,description,url,category)
+
+    return news_object

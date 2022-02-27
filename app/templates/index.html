@@ -9,7 +9,12 @@
         {% endif %}
     </head>
     <body>
-        <h1> {{message}}</h1>
+        <ul>
+            {% for business_news in business %}
+                <li>{{business_news.name}}</li>
+            {% endfor %}
+        </ul>
+        
     </body>
 </html>
 

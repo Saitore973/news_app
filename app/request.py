@@ -5,7 +5,7 @@ from .models import news
 
 News = news.News
 #geting the apikey 
-api_key = app.config['NEWS_API_KEY']
+apiKey = '4a3045725db04d12ae8c77bc69babaf2'
 # Getting the movie base url
 base_url = app.config["NEWS_SOURCE_URL"]
 
@@ -13,7 +13,7 @@ def get_newsource(category):
     '''
     Function that gets the json response to our url request
     '''
-    get_newsource_url = base_url.format(category,api_key)
+    get_newsource_url = base_url.format(category,apiKey)
 
     with urllib.request.urlopen(get_newsource_url) as url:
         get_newsource_data = url.read()
@@ -21,9 +21,9 @@ def get_newsource(category):
 
         news_results = None
 
-        if get_newsource_response['results']:
-            news_results_list = get_newsource_response['results']
-            news_results = process_results(news_results_list)
+        if get_newsource_response['sources']:
+            news_sources_list = get_newsource_response['sources']
+            news_results = process_results(news_sources_list)
 
 
     return news_results

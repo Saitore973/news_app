@@ -1,42 +1,24 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        {% if title %}
-        <title> {{ title }}</title>
-        {% else %}
-        <title> Welcome to the best Movie Review website </title>
-        {% endif %}
-    </head>
-    <body>
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+<!-- Content block -->
+{% block content %}
         <h1>Business News</h1>
         <ul>
-            {% for business_news in business %}
-                <li>{{business_news.name}}</li>
-            {% endfor %}
+             {{ macro.displayNewsList(business)}}
         </ul>
         <h1>Genaral News</h1>
         <ul>
-            {% for general_news in general %}
-                <li>{{general_news.name}}</li>
-            {% endfor %}
+             {{ macro.displayNewsList(general)}}
         </ul>
         <h1>Sports News</h1>
         <ul>
-            {% for sports_news in sports %}
-                <li>{{sports_news.name}}</li>
-            {% endfor %}
+             {{ macro.displayNewsList(sports)}}
         </ul>
         <h1>Technology News</h1>
         <ul>
-            {% for technology_news in technology %}
-                <li>{{technology_news.name}}</li>
-            {% endfor %}
+             {{ macro.displayNewsList(technology)}}
         </ul>
         
         
-        
-    </body>
-</html>
-
+     {% endblock%}   
 

@@ -1,4 +1,4 @@
-from unicodedata import name
+# from unicodedata import name
 
 
 class News:

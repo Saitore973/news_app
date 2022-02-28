@@ -24,6 +24,14 @@
         <ul>
              {{ macro.displayNewsList(technology)}}
         </ul>
+
+        <!-- Popular movie section  -->
+        <h3> Article</h3>
+         <ul>
+            {% for article_source in articles %}
+                <li>{{ article_source.title }}</li>
+            {% endfor %}
+        </ul>
         
         
      {% endblock%}   

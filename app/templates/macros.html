@@ -6,11 +6,11 @@
     <div class="row">
         {% for news in news_list %}
         <div class="col-md-4 card">
-            <div class="thumbnail">
-                <a href="">{{ news.url }} </a>
+            <div class="thumbnail ">
+                <a href="{{ news.url }}">view</a> </a>
                 <h3>{{ news.name}}</h3>
                 <p>{{news.description | truncate(10)}}</p>
-                <a href="/news/{{news.url}}" target="_blank"> Read More </a>
+         <a href="/news/{{news.id}}" target="_blank">  Read More </a>
 
             </div>
         </div>

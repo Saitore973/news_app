@@ -1,13 +1,16 @@
 from unicodedata import category
 from app import app
 import urllib.request,json
-from .models import news
+from .models import news,articles
+
 
 News = news.News
+Articles = articles.Article
 #geting the apikey 
-apiKey = '4a3045725db04d12ae8c77bc69babaf2'
+apiKey = '3b107a99439c4eb6bdd954f519de17cd'
 # Getting the movie base url
 base_url = app.config["NEWS_SOURCE_URL"]
+article_base_url = app.config["ARTICLES_URL"]
 
 def get_newsource(category):
     '''
@@ -72,3 +75,33 @@ def get_news(id):
             news_object = News(id,name,description,url,category)
 
     return news_object
+
+def get_articles(newsource_id):
+    article_url = article_base_url.format(newsource_id ,apiKey)
+    with urllib.request.urlopen(article_url) as url:
+        article_details = url.read()
+        article_response = json.loads(article_details)
+
+        article_results= None
+
+        if article_response['articles']:
+            article_results_list = article_response['articles']
+            article_results = process_result(article_results_list)
+
+    return article_results
+
+def process_result(article_list):
+    '''function to process article results'''
+    article_results = []
+    for articles in article_list:
+        author = articles.get('author')
+        title = articles.get('title')
+        description = articles.get('description')
+        url = articles.get('url')
+        urlToImage = articles.get('urlToImage')
+        publishedAt = articles.get('publishedAt')
+        content = articles.get('content')
+        
+        article_object = Articles(author,title,  description, url, urlToImage, publishedAt, content)
+        article_results.append(article_object)
+    return article_results

@@ -1,0 +1,61 @@
+body{
+  background-color: black !important;
+
+}
+.news{
+  color:#78D0D3;
+  font-weight:900
+}
+nav{
+  background-color: black !important;
+  margin-bottom: 10rem;
+}
+a h1{
+  color:#fff
+}
+h3{
+  color: #fff;
+  font-size:6rem;
+  font-weight: 900;
+  padding-bottom: 4rem;
+  letter-spacing: .8rem;
+}
+h4{
+  width: 70%;
+  /* padding-bottom: 3rem; */
+}
+.btn{
+  background-color: #78D0D3 !important;
+  padding:1rem 3rem !important
+}
+h3{
+  color:#fff;
+  font-weight: 900;
+}
+.circle{
+  width: 400px;
+  height: 400px;
+  border-radius: 100%;
+  position: relative;
+  background-color: #78D0D3;
+  animation: float 5s ease 2s infinite ;
+}
+.text-circle{
+ position: absolute;
+ left: 50%;
+ top:50%;
+ transform: translate(-50%,-50%);
+
+}
+.para{
+  text-align: center;
+  color: black;
+  font-weight: 900;
+}
+@keyframes float {
+  0%{top:0}
+  25%{top:80px}
+  50%{top:0}
+  75%{top:80px}
+  100%{top:0}
+}

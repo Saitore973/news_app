@@ -1,0 +1,27 @@
+{%  extends 'base.html'%}
+  {% block css %}
+  <link rel="stylesheet" href="{{url_for('static',filename = 'css/soure-artces.css')}}">
+  {% endblock %}
+
+  {% block title%}
+  {% endblock%}
+  {% block content %}
+  <div class="container">
+    <hr>
+    {% for article in articles%}
+  <h1>{{article.title}}</h1>
+  <img src="{{article.urlToImage}}" alt="">
+  <p>{{article.content}}</p>
+  <div>
+    <a href="{{article.url}}"><button class = "btn btn-secondary btn-lg" type= "button">Read More..</button>
+    </a>
+  </div>
+  <p class = "text-muted">By:{{article.author}}</p>
+  <p>Posted in: {{article.publishedAt}}</p>
+  <br>
+  <hr>
+  {% endfor %}
+  </div>
+  
+
+{% endblock %}

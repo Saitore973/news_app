@@ -1,0 +1,41 @@
+{%  extends 'base.html'%}
+{% block css %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/demo20.css')}}">
+{% endblock %}
+{% block head %}
+<title>Home</title>
+{% endblock %}
+
+{% block content %}
+<section>
+  <div class="container">
+  
+  
+    <nav class="navbar">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <h1>AS <span class = "news">News</span>  </h1>
+       </a>
+      </div>
+    </nav>
+    
+    <div class="row">
+      <div class="col-md-7">
+        <h3>EXPLORE TODAY</h3>
+        <h4>
+        THROUGH THE EYES OF OUR JOURNALISTS AND PHOTOGRAPHERS 
+        </h4>
+      </div>
+      <div class="col-md-5">
+        <div class="circle float">
+          <h3 class = "text-circle">DISCOVER
+            <p class = "para">Amazing content</p>
+          </h3>
+        </div>
+      </div>
+      <div class="">
+        <a href="/sources"><button class="btn btn-lg btn-primary">Sources</button></a>
+      </div>
+    </div>
+    </div>
+</section>

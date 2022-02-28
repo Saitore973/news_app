@@ -1,0 +1,10 @@
+img{
+  height: 500px;
+  margin: 3rem auto;
+}
+body{
+  background-color: black !important;
+}
+p,h1,hr{
+  color:#fff !important;
+}

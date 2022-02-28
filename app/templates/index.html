@@ -1,38 +1,41 @@
-{% extends 'base.html'%}
-{% import 'macros.html' as macro%}
-<!-- Styles block -->
+{%  extends 'base.html'%}
 
-{% block styles%}
-    {{ super() }}
-    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% block css %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('static',filename = 'css/trial7.css')}}">
 {% endblock %}
-<!-- Content block -->
+{% block head %}
+<title>Sources</title>
+{% endblock %}
+
 {% block content %}
-        <h1>Business News</h1>
-        <ul>
-             {{ macro.displayNewsList(business)}}
-        </ul>
-        <h1>Genaral News</h1>
-        <ul>
-             {{ macro.displayNewsList(general)}}
-        </ul>
-        <h1>Sports News</h1>
-        <ul>
-             {{ macro.displayNewsList(sports)}}
-        </ul>
-        <h1>Technology News</h1>
-        <ul>
-             {{ macro.displayNewsList(technology)}}
-        </ul>
 
-        <!-- Popular movie section  -->
-        <h3> Article</h3>
-         <ul>
-            {% for article_source in articles %}
-                <li>{{ article_source.title }}</li>
+  <section id = "sources">
+    <div class="container">
+      <hr>
+    <h1 class="text-center">
+      NEWS SOURCES
+    </h1>
+    <hr>
+  
+    <div class="row">
+      <div class="col-md-6 source">
+        {% for source in message %}
+        <div class = "my-card-container">
+          <div class="my-card">
+            
+              <h2>
+               |Source: {{source.name}}    
+              </h2>
+              <a href="/about/{{source.id}}"><button class="btn btn-outline-light">Read Articles..</button></a>
             {% endfor %}
-        </ul>
-        
-        
-     {% endblock%}   
-
+          </div>
+          
+        </div>
+  
+      </div>
+  
+    </div>
+  </div>
+</section>
+  {% endblock %}

@@ -1,20 +1,20 @@
 body{
-  background-color: black !important;
+  background-color: rgb(175, 172, 172) !important;
 
 }
 hr{
-  color: #78d0d3 !important;
+  color: gold!important;
   font-weight:900
 }
 h1{
-  color: #78d0d3;
+  color: gold;
 }
 
  .source{
    margin: 2rem
  }
  .btn{
-   background-color: #78d0d3 !important;
+   background-color: gold !important;
    margin: 2rem 0;
  }
  h2{

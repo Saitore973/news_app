@@ -1,41 +1,32 @@
-{%  extends 'base.html'%}
-
-{% block css %}
-{{super()}}
-<link rel="stylesheet" href="{{url_for('static',filename = 'css/trial7.css')}}">
-{% endblock %}
-{% block head %}
+{% extends 'base.html'%} {% block css %} {{super()}}
+<link
+  rel="stylesheet"
+  href="{{url_for('static',filename = 'css/trial7.css')}}"
+/>
+{% endblock %} {% block head %}
 <title>Sources</title>
-{% endblock %}
+{% endblock %} {% block content %}
 
-{% block content %}
-
-  <section id = "sources">
-    <div class="container">
-      <hr>
-    <h1 class="text-center">
-      NEWS SOURCES
-    </h1>
-    <hr>
-  
-    <div class="row">
+<section id="sources">
+  <div class="container">
+    <hr />
+    <h1 class="text-center">NEWS SOURCES</h1>
+    <hr />
+<div class="container-fluid">
+  <div class="row">
+      {% for source in message %}
       <div class="col-md-6 source">
-        {% for source in message %}
-        <div class = "my-card-container">
-          <div class="my-card">
-            
-              <h2>
-               |Source: {{source.name}}    
-              </h2>
-              <a href="/about/{{source.id}}"><button class="btn btn-outline-light">Read Articles..</button></a>
-            {% endfor %}
-          </div>
-          
+        <div class="thumbnail">
+          <h2>|Source: {{source.name}}</h2>
+          <a href="/about/{{source.id}}"
+            ><button class="btn btn-outline-light">Read Articles..</button></a
+          >
         </div>
-  
       </div>
-  
+      {% endfor %}
     </div>
+</div>
+    
   </div>
 </section>
-  {% endblock %}
+{% endblock %}

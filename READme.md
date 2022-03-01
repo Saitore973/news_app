@@ -9,7 +9,7 @@ This is an application that will help people who want to get realtime news witho
 
 ## Live Demo
 
-Click [Link](news-app-sv.herokuapp.com/) to visit the site
+news-app-sv.herokuapp.com
 
 
 ## User Story

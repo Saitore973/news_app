@@ -1,13 +1,13 @@
 body{
-  background-color: black !important;
+  background-color: rgb(175, 172, 172) !important;
 
 }
 .news{
-  color:#78D0D3;
+  color:gold;
   font-weight:900
 }
 nav{
-  background-color: black !important;
+  background-color: rgb(175, 172, 172) !important;
   margin-bottom: 10rem;
 }
 a h1{
@@ -25,7 +25,7 @@ h4{
   /* padding-bottom: 3rem; */
 }
 .btn{
-  background-color: #78D0D3 !important;
+  background-color: gold !important;
   padding:1rem 3rem !important
 }
 h3{
@@ -35,22 +35,24 @@ h3{
 .circle{
   width: 400px;
   height: 400px;
-  border-radius: 100%;
+  border-radius: 50%;
   position: relative;
-  background-color: #78D0D3;
-  animation: float 5s ease 2s infinite ;
+  background-color:rgb(175, 172, 172);
+  animation: float 15s ease 2s infinite ;
 }
 .text-circle{
  position: absolute;
  left: 50%;
  top:50%;
  transform: translate(-50%,-50%);
+ text-align: center;
 
 }
 .para{
   text-align: center;
-  color: black;
+  color: rgb(175, 172, 172);
   font-weight: 900;
+  font-size:200px;
 }
 @keyframes float {
   0%{top:0}
